@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* overflow:hidden; */
+      }
+      body{
+        overflow-x: hidden;
+      }
+      .navbar {
+        background-color: grey;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+      }
+      .navbar-brand {
+        color: rgb(9, 168, 189);
+        font-size: 40px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+      .navbar-brand img {
+        margin-right: 10px;
+      }
+      .nav-link {
+        color: black;
+        font-size: 20px;
+        padding: 14px 25px;
+        text-decoration: none;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+      }
+      .nav-link:hover, .dropdown:hover .btn {
+        color: rgb(9, 168, 189);
+      }
+      .dropdown {
+        position: relative;
+      }
+      .dropdown .btn {
+        font-size: 20px;
+        border: none;
+        outline: none;
+        color: black;
+        padding-top: 14px;
+        padding-right: 25px;
+        background-color: inherit;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        margin: 0;
+        font-weight: bold;
+      }
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        top: 75px;
+        left: 0;
+        z-index: 1000;
+      }
+      .dropdown-menu a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-weight: 100;
+      }
+      .dropdown-menu a:hover {
+        background-color: lightgrey;
+        color: black;
+      }
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+      .btn {
+        display: flex;
+        align-items: center;
+      }
+      .btn .bi {
+        margin-left: 8px;
+      }
+      .join-class-btn {
+        background-color: rgb(9, 168, 189);
+        border: none;
+        margin-right: 30px;
+        font-size: 20px;
+        color: white;
+        border-radius: 50px;
+        padding: 10px 20px;
+      }
+      .d1{
+        height:500px;
+        width:100%;
+        background-color: rgb(9, 168, 189);
+        padding-top:200px;
+        /* display:flex;
+        justify-content: space-between;
+        padding-top: 150px; */
+      }
+
+      .card-class{
+        margin-left:150px;
+        display:flex;
+        margin-right:15px;
+        align-items: center;
+        justify-content: center;
+        gap:20px;
+        margin-bottom:15px;
+        
+      }
+      .card{
+        background-color: lightgray;
+      }
+    
+     .d6{
+      height:700px;
+      width:1200px;
+      /* border: 1px solid black; */
+      margin-left: 300px;
+     }
+     .image1{
+      float: left;
+      margin-top: 10px;
+      margin-right: 10px;
+     }
+     .textone{
+      margin-top: 80px;
+     }
+     .imagetwo{
+      float:left;
+     }
+    .texttwo{
+      float:right;
+      padding:10px;
+    }
+    .card-one{
+        margin-left:100px;
+        display:flex;
+        margin-right:15px;
+        align-items: center;
+        justify-content: center;
+        gap:40px;
+        margin-bottom:15px;
+    }
+    .t1,th,td{
+            border-collapse: collapse;
+            border:none;
+            border-left: none;
+            border-right: none;
+            border-top:1px solid black;
+            border-bottom:1px solid black;
+            text-align: center;
+            /* margin-left:10px;*/
+            padding:10px;
+        }
+        .t1{
+          padding-left:20px;
+          /* margin-left:20px; */
+          margin: 1rem auto;
+        }
+        .d8{
+          margin-left:300px;
+          height:600px;
+          width:1200px;
+          /* border:1px solid black; */
+          /* margin-top:200px; */
+        }
+        .text-four{
+          float:left;
+          margin:10px;
+          margin-top:80px;
+        }
+        .text-form{
+          float:right;
+        }
+        .circle-container
+        {
+          margin-left:250px;
+          height:400px;
+          width:1200px;
+          /* border:1px solid black; */
+          display:flex;
+          align-items: center;
+          justify-content: space-between;
+          gap:5px;
+        }
+        .circle-item {
+            text-align: center;
+        }
+        .circle{
+          width:300px;
+          height:300px;
+          /* border:1px solid black; */
+          border-radius: 50%;
+          display:flex;
+          margin-left:5px;
+          margin-right:5px;
+          align-items: center;
+          justify-content: center;
+          
+        }
+        .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            border-radius: 50%;
+        }
+        .d9{
+          height:330px;
+          width:1400px;
+          /* border:1px solid black; */
+          margin-left:200px;
+          display:flex;
+          /* align-items: center; */
+          justify-content: space-between;
+          gap:10px;
+        }
+        .a{
+          height:300px;
+          width:400px;
+          /* border:1px solid black; */
+        }
+        .b{
+          height:300px;
+          width:400px;
+          /* border:1px solid black; */
+        }
+        .c{
+          height:300px;
+          width:400px;
+          /* border:1px solid black; */
+        }
+        .text-t1{
+          width:400px;
+          height:150px;
+          background-color: lightgray;
+          padding:10px;
+        }
+        .b1{
+          background-color:#03293b8a;
+        }
+        .b1:hover{
+          background-color:#04171f8a;
+        }
+        .b2{
+          background-color:rgb(9, 168, 189);
+        }
+        .b2:hover{
+          background-color:rgb(10, 60, 67);
+        }
+        .b3{
+          background-color:rgb(9, 168, 189);
+        }
+        .b3:hover{
+          background-color:rgb(10, 60, 67);
+        }
+        .b4{
+          background-color: rgb(3, 49, 67);
+        }
+        .b4:hover{
+          background-color:rgb(10, 60, 67);
+        }
+        .b5{
+          background-color:rgb(9, 168, 189);
+        }
+        .b5:hover{
+          background-color:rgb(10, 60, 67);
+        }
+        .img-txt{
+          display:flex;
+          align-items: center;
+          justify-content: space-between;
+          gap:5px;
+        }
+        .d11{
+          height:650px;
+          width:100%;
+          
+          background-color: rgb(4, 61, 79);
+          color:rgb(9, 168, 189);
+         
+        }
+        .d12{
+          height:450;
+          width:1200px;
+          margin-left:250px;
+          /* border:1px sold red; */
+          display:flex;
+          align-items: center;
+          justify-content: space-between;
+          gap:45px;
+        }
+      .a1{
+
+        height:400px;
+        width:600px;
+        /* border:1px solid rgb(9, 168, 189);  */
+        margin-top:40px;
+        /* display:flex; */
+        margin:10px;
+        /* margin-right:90px; */
+        padding:10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="navbar-brand" href="#">
+        <img src="https://img.freepik.com/premium-vector/panda-wearing-schoolbag_905719-1143.jpg" style="width:46px;height:46px;">
+        KidKinder
+      </a>
+      <div class="nav">
+        <a class="nav-link" href="index4.html">Home</a>
+        <a class="nav-link" href="aboutus.html">About</a>
+        <a class="nav-link" href="class.html">Classes</a>
+        <a class="nav-link" href="teachers.html">Teachers</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <div class="dropdown">
+          <button class="btn">Pages <i class="bi bi-caret-down-fill"></i></button>
+          <div class="dropdown-menu">
+            <a href="bloggrid.html">Blog grid</a>
+            <a href="blogdetail.html">Blog Detail</a>
+          </div>
+        </div>
+        <a class="nav-link" href="contactus.html">Contact</a>
+      </div>
+      <button class="join-class-btn">Join Class</button>
+    </nav>
+    <div class="d1">
+      <h1 style="text-align: center;">About US</h1>
+      <!-- <br><br><br><br><br><br><br><br><br><br>
+      <div class="d2">
+      <h4 style="margin-left:100px;color:white;">Kids Learning Center</h4>
+      <h1 style="margin-left:100px;color:white;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:60px;">New Approach To Kids Education</h1>
+      <p style="margin-left:100px;color:white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,</p>
+        <p style="margin-left:100px;color:white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, numquam.</p>
+          <p style="margin-left:100px;color:white;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, possimus!</p>
+          <br><br>
+          <button class="b1" style="color:white;margin-left:100px;padding:20px;border-radius: 50px;border:none;width:180px;height:60px;font-size: 20px;" >Learn More</button>
+      </div>
+      <div class="d3">
+     <a class="pic" href="#">
+  <img src="https://www.babycouture.in/blog/wp-content/uploads/2017/04/cover-4.jpg" style="width:600px;height:600px;float:right;margin-right:30px;">
+      </a>
+      </div> -->
+      </div>
+
+      <br><br><br><br><br>
+      <div class="d6">
+            <div class="image1">
+              <img src="https://irp.cdn-website.com/772d3693/dms3rep/multi/1526107-blog-teacher.jpg" style="height:650px;width:500px;">
+            </div>
+           
+
+        <div class="textone">
+            <h4>Learn about Us</h4>
+            <hr>
+            <h1>Best School For Kids</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, repudiandae.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet, placeat.</p>
+          <div class="d7">
+            <div class="imagetwo">
+            <img src="https://i0.wp.com/www.additudemag.com/wp-content/uploads/2016/11/111_5_School_9-adhd-strategies-for-teachers_SS_111_math-students-hands-raised_ts-486325400.jpg" style="height:200px;width:200px;margin:30px;">
+            </div>
+             <div class="texttwo">
+              <hr>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing aydr</p>
+              <hr>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing avgf</p>
+              <hr>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing bhgt</p>
+              <hr>
+             </div>
+             <div class="textthree">
+             <button class="b2"style="color:white;margin:30px;padding:20px;border-radius: 50px;border: none;">Learn More</button>
+             </div>
+          </div>
+            
+        </div>
+    </div> 
+      <br><br><br><br><br><br>
+      <div class="card-class">
+      <div class="card" style="width: 25rem;">
+        <img src="https://cdn-icons-png.freepik.com/512/5921/5921833.png" style="height:46px;width:46px;margin-left:10px;float:left;padding:5px;" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">Playground</h5>
+          <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, minus.</p>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+      <div class="card" style="width: 25rem;">
+        <img src="https://cdn-icons-png.flaticon.com/512/4472/4472584.png"style="height:46px;width:46px;margin-left:10px;float:left;padding:5px;" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Music & Dance</h5>
+          <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, minus.</p>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="https://cdn-icons-png.flaticon.com/512/4893/4893176.png"style="height:46px;width:46px;margin-left:10px;float:left;padding:5px;" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Arts & Craft</h5>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, minus.</p>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          </div>
+      </div>
+      </div>
+      
+      <div class="card-class">
+        <div class="card" style="width: 25rem;">
+          <img src="https://cdn-icons-png.flaticon.com/512/4669/4669557.png" style="height:46px;width:46px;margin-left:10px;float:left;padding:5px;" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Safe Transportation</h5>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, minus.</p>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          </div>
+        </div>
+        <div class="card" style="width: 25rem;">
+          <img src="https://cdn-icons-png.flaticon.com/512/4080/4080032.png" style="height:46px;width:46px;margin-left:10px;float:left;padding:5px;" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Healthy Food</h5>
+            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, minus.</p>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          </div>
+          </div>
+          <div class="card" style="width: 25rem;">
+            <img src="https://cdn.vectorstock.com/i/preview-1x/47/38/travel-education-logo-icon-design-vector-22644738.jpg" style="height:46px;width:46px;margin-left:10px;float:left;padding:5px;" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Educational Tour</h5>
+              <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, minus..</p>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+        </div>
+        </div>
+      
+<!-- <br><br><br>
+<h5 style="color:rgb(9, 168, 189);text-align: center;">Popular Classes</h5>
+<h1 style="color:black;text-align: center;">Classes For Kids</h1>
+<br><br>
+
+<div class="card-one">
+<div class="card" style="width: 25rem;height:700px;">
+  <img src="https://www.the74million.org/wp-content/uploads/2018/08/iStock-877290928.jpg" style="height:200px;width:100%;"class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" style="text-align: center;font-size: 30px;">Drawing Class</h5>
+    <hr>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <table border="1" align="center" class="t1">
+      <tr>
+          <th>Age of Kids</th>
+          <td>3 - 6 Years</td>
+      </tr>
+      <tr>
+          <th>Total Seats</th>
+          <td>40 Seats</td>
+      </tr>
+      <tr>
+          <th>Class Time</th>
+          <td>08:00 - 10:00</td>
+          </tr>
+          <tr>
+            <th>Tution Fee</th>
+            <td>$290 / Month</td>
+            </tr>
+      </table>
+     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    <!-- <br>
+    <div style="text-align: center;">
+    <button class="b3"style="color:white;padding:20px;border:none;border-radius:50px;">Join Now</button>
+    </div>
+  </div>
+</div>
+<div class="card" style="width: 25rem;height:700px;">
+  <img src="https://ounews.co/wp-content/uploads/2017/11/shutterstock_259018115-e1510570774920.jpg" style="height:200px;width:100%;"class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" style="text-align: center;font-size: 30px;">Language Learning</h5>
+    <hr>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <table border="1" align="center" class="t1">
+      <tr>
+          <th>Age of Kids</th>
+          <td>3 - 6 Years</td>
+      </tr>
+      <tr>
+          <th>Total Seats</th>
+          <td>40 Seats</td>
+      </tr>
+      <tr>
+          <th>Class Time</th>
+          <td>08:00 - 10:00</td>
+          </tr>
+          <tr>
+            <th>Tution Fee</th>
+            <td>$290 / Month</td>
+            </tr>
+      </table> -->
+    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    <!-- <br>
+    <div style="text-align: center;">
+    <button class="b3"style="color:white;padding:20px;border:none;border-radius:50px;">Join Now</button>
+    </div>
+  </div>
+</div>
+<div class="card" style="width: 25rem;height:700px;">
+  <img src="https://varthana.com/school/wp-content/uploads/2023/03/B211.jpg" style="height:200px;width:100%;"class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" style="text-align: center;font-size: 30px;">Basic Science</h5>
+    <hr>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <table border="1" align="center" class="t1">
+      <tr>
+          <th>Age of Kids</th>
+          <td>3 - 6 Years</td>
+      </tr>
+      <tr>
+          <th>Total Seats</th>
+          <td>40 Seats</td>
+      </tr>
+      <tr>
+          <th>Class Time</th>
+          <td>08:00 - 10:00</td>
+          </tr>
+          <tr>
+            <th>Tution Fee</th>
+            <td>$290 / Month</td>
+            </tr>
+      </table> -->
+    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    <!-- <br>
+    <div style="text-align: center;">
+    <button  class="b3"style="color:white;padding:20px;border:none;border-radius:50px;">Join Now</button>
+    </div>
+  </div>
+</div>
+</div>  -->
+
+<!-- <br><br><br><br>
+<div class="d8">
+  <div class="text-four">
+   <h4 style="color:rgb(9, 168, 189);">Book a seat</h4>
+   <h1 style="color:rgb(3, 37, 51)">Book A Seat For your Kid</h1>
+   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, ratione?</p>
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, qui.</p>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, molestiae.</p>
+   <ol>
+    <li>Lorem, ipsum dolor sit amet</li>
+    <li>Lorem, ipsum dolor sit amet</li>
+    <li>Lorem, ipsum dolor sit amet</li>
+   </ol>
+   <button class="b5"style="color:white;margin-left:50px;padding:20px;border:none;border-radius:45px;width:200px;">Book Now</button>
+  </div>
+  <div class="text-form">
+<form style="height:500px;width:400px;border:1px solid black;background-color:rgb(9, 168, 189);margin:40px;margin-right:90px;">
+   <div style="background-color:rgb(4, 58, 92);color:white;height:100px;width:400px;text-align:center;padding:15px;"><h1>Book a Seat</h1></div>
+   <br><br>
+   <input type="text" placeholder="Your name" style="width:300px;margin-left:45px;padding:15px;" required>
+   <br><br>
+   <input type="text" placeholder="Your Email"style="width:300px;margin-left:45px;padding:15px;" required>
+   <br><br>
+   <select style="width:300px;margin-left:45px;padding:15px;">
+    <option>Select a Class</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+   </select>
+   <br><br>
+   <button class="b4"style="color:white;padding:20px;width:300px;margin-left:45px;border:none;border-radius: 45px;">Book Now</button>
+  </form>
+  </div>
+
+</div> -->
+<br>
+<h4 style="color:rgb(9, 168, 189);text-align: center;">Our Teachers</h4>
+<h1 style="color:rgb(3, 49, 67);text-align: center;">Meet Our Teachers</h1>
+<div class="circle-container">
+  <div class="circle-item">
+      <div class="circle"><img src="https://www.americanboard.org/blog/wp-content/uploads/2016/02/veteran_teacher-600x350.jpg"></div>
+      <div class="circle-text" style="font-weight: bold;">Julia Smith</div>
+      <div class="cicle-text-one">Music Teacher</div>
+  </div>
+  <div class="circle-item">
+      <div class="circle"><img src="https://www.wgu.edu/blog/2022/06/teaching-careers-5-surprising-facts/_jcr_content/root/container/imageandtext.coreimg.85.800.png/1699490349180/portrait-of-female-teacher-in-classroom.png"></div>
+      <div class="circle-text"style="font-weight: bold;">Smitha Doe</div>
+      <div class="cicle-text-one">Language Teacher</div>
+  </div>
+  <div class="circle-item">
+      <div class="circle"><img src="https://www.acacia.edu/wp-content/uploads/2023/07/young-woman-teacher-wearing-glasses-sitting-school-desk-front-blackboard-classroom-checking-class-register-looking-camera-smiling-cheerfully-min-1024x683.jpg"></div>
+      <div class="circle-text"style="font-weight: bold;">Mollie Ross</div>
+      <div class="cicle-text-one">Dance Teacher</div>
+  </div>
+  <div class="circle-item">
+    <div class="circle"><img src="https://as1.ftcdn.net/v2/jpg/05/57/35/54/1000_F_557355484_m6hSlsoImUnzPQPC6d295zcFE3bsyFnF.jpg"></div>
+    <div class="circle-text"style="font-weight: bold;">Donald John</div>
+    <div class="cicle-text-one">Art Teacher</div>
+</div>
+</div>
+<br><br>
+<!-- <h4 style="color:rgb(9, 168, 189);text-align: center;">Testimonial</h4>
+<h1 style="color:rgb(3, 49, 67);text-align: center;">What Parents Say!</h1>
+
+<div class="d9">
+
+  <div class="a">
+   <div class="text-t1">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, eaque!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, in.
+   </div>
+   <div class="img-txt">
+    <div class="img3" ><img src="https://thumbs.dreamstime.com/z/small-students-teacher-painting-art-school-class-child-drawing-paints-professional-teaches-children-to-draw-92164397.jpg"style="height:150px;width:150px;border-radius: 50%;margin-left:20px;"></div>
+    <div class="txt3" style="margin:85px;margin-top:30px;">Amrita shah</div>
+   </div>
+  </div> -->
+  
+  <!-- <div class="b">
+    <div class="text-t1">
+     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, eaque!
+     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, minima.
+    </div>
+    <div class="img-txt">
+      <div class="img3" ><img src="https://i.insider.com/6230b6b8dc43bd0018947a5e?width=728&format=jpeg"style="height:150px;width:150px;border-radius: 50%;margin-left:20px;"></div>
+      <div class="txt3" style="margin:85px;margin-top:30px;">Anita sharma</div>
+    </div>
+   </div>
+
+   <div class="c">
+    <div class="text-t1">
+     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, eaque!
+     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, minima.
+    </div>
+    <div class="img-txt">
+      <div class="img3" ><img src="https://photos.demandstudios.com/getty/article/251/198/86806725.jpg"style="height:150px;width:150px;border-radius: 50%;margin-left:20px;"></div>
+      <div class="txt3" style="margin:85px;margin-top:30px;">Ankita shaha</div>
+    </div>
+   </div>
+</div> -->
+<!-- <br><br>
+<h4 style="color:rgb(9, 168, 189); text-align:center;">Latest Blog</h4>
+<h1 style="text-align:center;">Latest Articles from Blog</h1>
+<br>
+
+
+<div class="card-one">
+  <div class="card" style="width: 25rem;height:550px;">
+    <img src="https://www.playgroupwa.com.au/wp-content/uploads/2016/06/ETTS_Painting_Toddler_WP.jpg" style="height:200px;width:100%;"class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title" style="text-align: center;font-size: 30px;">Lorem ipsum dolor sit</h5>
+      <hr>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, tempore!lorem10
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, eius?
+      </p> -->
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      <!-- <br>
+      <div style="text-align: center;">
+      <button class="b3"style="color:white;padding:20px;border:none;border-radius:50px;">Read More</button>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="width: 25rem;height:550px;">
+    <img src="https://img.freepik.com/premium-photo/development-children-s-creativity-drawing-with-paints-beautiful-girl-with-paints-brushes-palette-her-hands-purple-isolated-background_222185-4421.jpg" style="height:200px;width:100%;"class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title" style="text-align: center;font-size: 30px;">Lorem ipsum dolor sit</h5>
+      <hr>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, tempore!lorem10
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, eius?
+      </p> -->
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      <!-- <br>
+      <div style="text-align: center;">
+      <button class="b3"style="color:white;padding:20px;border:none;border-radius:50px;">Read More</button>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="width: 25rem;height:550px;">
+    <img src="https://img.freepik.com/free-photo/cheerful-schoolchildren-with-blackboard-background_1098-3943.jpg" style="height:200px;width:100%;"class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title" style="text-align: center;font-size: 30px;">Lorem ipsum dolor sit</h5>
+      <hr>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, tempore!lorem10
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, eius?
+      </p> -->
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      <!-- <br>
+      <div style="text-align: center;">
+      <button  class="b3"style="color:white;padding:20px;border:none;border-radius:50px;">Read More</button>
+      </div>
+    </div>
+  </div>
+  </div> -->
+  <br><br>
+  <div class="d11">
+  <footer>
+    <div class="d12">
+   <div class="a1">
+    <h1>KidKinder</h1>
+    <p style="font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, consequuntur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,.consequuntur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,</p>
+   </div>
+   <div class="a1">
+    <h1>Get In touch</h1>
+    <p>Address: </p>
+      <p>123 Street, New York, USA</p>
+    <p>Email:</p> 
+    <p>infoexample.com</p>
+    <p>Phone: </p>
+      <p>+123 456 7890</p>
+  </div>
+   <div class="a1">
+    <h1>Quick Links</h1>
+  <p><a style="font-size: 25px;" href="index4.html">Home</a></p>
+  <p><a style="font-size: 25px;"href="aboutus.html">about us</a></p>
+  <p><a style="font-size: 25px;"href="class.html">our classes</a></p>
+  <p><a style="font-size: 25px;"href="teachers.html">Our Teachers</a></p>
+
+  <p><a style="font-size: 25px;"href="blogdetail.html">Our Blog</a></p>
+  <p><a style="font-size: 25px;"href="contactus.html">contact Us</a></p>
+  </div>
+   <div class="a1">
+    <form>
+      <h1>Newsletter</h1>
+      <br><br>  
+    <input style="width:200px;padding:10px;margin-left:15px;"type="text" placeholder="your name" required><br><br>
+      <input style="width:200px;padding:10px;margin-left:15px;"type="text" placeholder="your email" required>
+      <br><br>
+      <button style="width:200px;border:none;border-radius: 45px;padding:10px;margin-left:15px;background-color: rgb(20, 136, 198);">Submit Now</button>
+    </form>
+    </div>
+   </div>
+   <!-- </div> -->
+   <hr style="color:rgb(9, 168, 189);">
+   <br><br>
+   <div class="d13">
+    <h4 style="text-align: center;">&copy;All Rights Reserved.Designed By Akanksha.</h4>
+    <h4 style="text-align: center;">Distributed By: Theme Wagon</h4>
+   </div>
+  </footer>
+  </div>
+  </body>
+</html>

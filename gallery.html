@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* overflow:hidden; */
+      }
+      body{
+        overflow-x: hidden;
+        /* font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column; */
+      }
+      .navbar {
+        background-color: grey;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+      }
+      .navbar-brand {
+        color: rgb(9, 168, 189);
+        font-size: 40px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+      }
+      .navbar-brand img {
+        margin-right: 10px;
+      }
+      .nav-link {
+        color: black;
+        font-size: 20px;
+        padding: 14px 25px;
+        text-decoration: none;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+      }
+      .nav-link:hover, .dropdown:hover .btn {
+        color: rgb(9, 168, 189);
+      }
+      .dropdown {
+        position: relative;
+      }
+      .dropdown .btn {
+        font-size: 20px;
+        border: none;
+        outline: none;
+        color: black;
+        padding-top: 14px;
+        padding-right: 25px;
+        background-color: inherit;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        margin: 0;
+        font-weight: bold;
+      }
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        top: 75px;
+        left: 0;
+        z-index: 1000;
+      }
+      .dropdown-menu a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-weight: 100;
+      }
+      .dropdown-menu a:hover {
+        background-color: lightgrey;
+        color: black;
+      }
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+      .btn {
+        display: flex;
+        align-items: center;
+      }
+      .btn .bi {
+        margin-left: 8px;
+      }
+      .join-class-btn {
+        background-color: rgb(9, 168, 189);
+        border: none;
+        margin-right: 30px;
+        font-size: 20px;
+        color: white;
+        border-radius: 50px;
+        padding: 10px 20px;
+      }
+      .d1{
+        height:500px;
+        width:100%;
+        background-color: rgb(9, 168, 189);
+        padding-top:200px;
+        /* display:flex;
+        justify-content: space-between;
+        padding-top: 150px; */
+      }
+
+      .card-class{
+        margin-left:150px;
+        display:flex;
+        margin-right:15px;
+        align-items: center;
+        justify-content: center;
+        gap:20px;
+        margin-bottom:15px;
+        
+      }
+      .card{
+        background-color: lightgray;
+      }
+    
+     .d6{
+      height:700px;
+      width:1200px;
+      /* border: 1px solid black; */
+      margin-left: 300px;
+     }
+     .image1{
+      float: left;
+      margin-top: 10px;
+      margin-right: 10px;
+     }
+     .textone{
+      margin-top: 80px;
+     }
+     .imagetwo{
+      float:left;
+     }
+    .texttwo{
+      float:right;
+      padding:10px;
+    }
+    .card-one{
+        margin-left:100px;
+        display:flex;
+        margin-right:15px;
+        align-items: center;
+        justify-content: center;
+        gap:40px;
+        margin-bottom:15px;
+    }
+    .t1,th,td{
+            border-collapse: collapse;
+            border:none;
+            border-left: none;
+            border-right: none;
+            border-top:1px solid black;
+            border-bottom:1px solid black;
+            text-align: center;
+            /* margin-left:10px;*/
+            padding:10px;
+        }
+        .t1{
+          padding-left:20px;
+          /* margin-left:20px; */
+          margin: 1rem auto;
+        }
+        .d8{
+          margin-left:300px;
+          height:600px;
+          width:1200px;
+          /* border:1px solid black; */
+          /* margin-top:200px; */
+        }
+        .text-four{
+          float:left;
+          margin:10px;
+          margin-top:80px;
+        }
+        .text-form{
+          float:right;
+        }
+        .circle-container
+        {
+          margin-left:250px;
+          height:400px;
+          width:1200px;
+          /* border:1px solid black; */
+          display:flex;
+          align-items: center;
+          justify-content: space-between;
+          gap:5px;
+        }
+        .circle-item {
+            text-align: center;
+        }
+        .circle{
+          width:300px;
+          height:300px;
+          /* border:1px solid black; */
+          border-radius: 50%;
+          display:flex;
+          margin-left:5px;
+          margin-right:5px;
+          align-items: center;
+          justify-content: center;
+          
+        }
+        .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            border-radius: 50%;
+        }
+        .d9{
+          height:330px;
+          width:1400px;
+          /* border:1px solid black; */
+          margin-left:200px;
+          display:flex;
+          /* align-items: center; */
+          justify-content: space-between;
+          gap:10px;
+        }
+        .a{
+          height:300px;
+          width:400px;
+          /* border:1px solid black; */
+        }
+        .b{
+          height:300px;
+          width:400px;
+          /* border:1px solid black; */
+        }
+        .c{
+          height:300px;
+          width:400px;
+          /* border:1px solid black; */
+        }
+        .text-t1{
+          width:400px;
+          height:150px;
+          background-color: lightgray;
+          padding:10px;
+        }
+        .b1{
+          background-color:#03293b8a;
+        }
+        .b1:hover{
+          background-color:#04171f8a;
+        }
+        .b2{
+          background-color:rgb(9, 168, 189);
+        }
+        .b2:hover{
+          background-color:rgb(10, 60, 67);
+        }
+        .b3{
+          background-color:rgb(9, 168, 189);
+        }
+        .b3:hover{
+          background-color:rgb(10, 60, 67);
+        }
+        .b4{
+          background-color: rgb(3, 49, 67);
+        }
+        .b4:hover{
+          background-color:rgb(10, 60, 67);
+        }
+        .b5{
+          background-color:rgb(9, 168, 189);
+        }
+        .b5:hover{
+          background-color:rgb(10, 60, 67);
+        }
+        .img-txt{
+          display:flex;
+          align-items: center;
+          justify-content: space-between;
+          gap:5px;
+        }
+        .d11{
+          height:650px;
+          width:100%;
+          
+          background-color: rgb(4, 61, 79);
+          color:rgb(9, 168, 189);
+         
+        }
+        .d12{
+          height:450;
+          width:1200px;
+          margin-left:250px;
+          /* border:1px sold red; */
+          display:flex;
+          align-items: center;
+          justify-content: space-between;
+          gap:45px;
+        }
+      .a1{
+
+        height:400px;
+        width:600px;
+        /* border:1px solid rgb(9, 168, 189);  */
+        margin-top:40px;
+        /* display:flex; */
+        margin:10px;
+        /* margin-right:90px; */
+        padding:10px;
+      }
+      /* .gallery{
+      align-items: center;
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-gap:2px;
+      margin-left:250px;
+    }
+    .btn4{
+      text-align: center;
+    }
+    .btn3{
+      background-color:white;
+      color:rgb(9, 168, 189);
+      padding:10px;
+      /* border:none; */
+      /* border-radius: 45%;
+      border-color:rgb(9, 168, 189); */
+
+    /* } */
+    /* .btn3:hover{
+      background-color:rgb(9, 168, 189);
+      color:white;
+    /* } */
+    .gallery-container {
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            display: none; /* Hide images by default */
+        }
+
+        .btn4 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .btn3 {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #09a8bd;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn3:hover {
+            background-color: #007a91;
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="navbar-brand" href="#">
+        <img src="https://img.freepik.com/premium-vector/panda-wearing-schoolbag_905719-1143.jpg" style="width:46px;height:46px;">
+        KidKinder
+      </a>
+      <div class="nav">
+        <a class="nav-link" href="index4.html">Home</a>
+        <a class="nav-link" href="aboutus.html">About</a>
+        <a class="nav-link" href="class.html">Classes</a>
+        <a class="nav-link" href="teachers.html">Teachers</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <div class="dropdown">
+          <button class="btn">Pages <i class="bi bi-caret-down-fill"></i></button>
+          <div class="dropdown-menu">
+            <a href="bloggrid.html">Blog grid</a>
+            <a href="blogdetail.html">Blog Detail</a>
+          </div>
+        </div>
+        <a class="nav-link" href="contactus.html">Contact</a>
+      </div>
+      <button class="join-class-btn">Join Class</button>
+    </nav>
+    <div class="d1">
+      <h1 style="text-align: center;">Gallery</h1>
+    </div>
+      <!-- <br><br><br><br><br><br><br><br><br><br>
+      <div class="d2">
+      <h4 style="margin-left:100px;color:white;">Kids Learning Center</h4>
+      <h1 style="margin-left:100px;color:white;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:60px;">New Approach To Kids Education</h1>
+      <p style="margin-left:100px;color:white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,</p>
+        <p style="margin-left:100px;color:white;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, numquam.</p>
+          <p style="margin-left:100px;color:white;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, possimus!</p>
+          <br><br>
+          <button class="b1" style="color:white;margin-left:100px;padding:20px;border-radius: 50px;border:none;width:180px;height:60px;font-size: 20px;" >Learn More</button>
+      </div>
+      <div class="d3">
+     <a class="pic" href="#">
+  <img src="https://www.babycouture.in/blog/wp-content/uploads/2017/04/cover-4.jpg" style="width:600px;height:600px;float:right;margin-right:30px;">
+      </a>
+      </div> -->
+      <!-- <br><br> <br><br>
+      <h4 style="text-align: center;color:rgb(9, 168, 189)">Our Gallery</h4>
+      <h1 style="text-align: center;">Our Kids School Gallery</h1>
+        <br><br>
+        <div class="btn4">
+        <button class="btn3">All</button>
+        <button class="btn3">Drawing</button>
+        <button class="btn3">Playing</button>
+        <button class="btn3">Reading</button>
+        </div>
+        <br><br>
+        <div class="gallery">
+          <img src="https://sksciencecentre.org/wp-content/uploads/2021/09/home-banner5.jpg" style="height:300px;width:300px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Eco_Park_Patna.jpg" style="height:300px;width:300px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Buddha_Smriti_Park_Patna.jpg" style="height:300px;width:300px;">
+
+        </div> -->
+        <br><br>
+        <br><br>
+        <div class="gallery-container">
+          <h4 style="color:rgb(9, 168, 189)">Get In Touch</h4>
+          <h1>Contact Us for Any query</h1>
+          <div class="btn4">
+              <button class="btn3" onclick="showImages('all')">All</button>
+              <button class="btn3" onclick="showImages('drawing')">Drawing</button>
+              <button class="btn3" onclick="showImages('playing')">Playing</button>
+              <button class="btn3" onclick="showImages('reading')">Reading</button>
+          </div>
+          <div class="gallery">
+              <img src="https://st3.depositphotos.com/1000260/15577/i/1600/depositphotos_155779956-stock-photo-small-students-children-painting-in.jpg" alt="Drawing Image" class="drawing">
+              <img src="https://www.chickyolive.com/wp-content/uploads/2020/12/Helping-your-Child-Adjust-to-School-Life.jpg" alt="Playing Image" class="playing">
+              <img src="https://im.idiva.com/photogallery/2014/Mar/playschool.jpg" alt="Playing Image" class="playing">
+              <img src="https://content.jdmagicbox.com/comp/tirunelveli/z5/0462px462.x462.190309124026.r5z5/catalogue/zee-kids-play-school-tirunelveli-enr9irxylc.jpg" alt="Reading Image" class="reading">
+              <img src="https://previews.123rf.com/images/poznyakov/poznyakov1801/poznyakov180100280/93868402-child-dough-play-in-school-plasticine-for-children-mold-from-plasticine-in-kindergarten-kids-knead-m.jpg" alt="Reading Image" class="reading">
+              <img src="https://saiangan.co.in/wp-content/uploads/2021/04/best-play-school-in-india-1024x343.jpeg" alt="Reading Image" class="reading">
+          </div>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            showImages('all'); // Show all images by default when the page loads
+        });
+
+        function showImages(category) {
+            // Hide all images
+            const allImages = document.querySelectorAll('.gallery img');
+            allImages.forEach(img => img.style.display = 'none');
+
+            // Show images based on the category
+            if (category === 'all') {
+                allImages.forEach(img => img.style.display = 'block');
+            } else {
+                const categoryImages = document.querySelectorAll(`.${category}`);
+                categoryImages.forEach(img => img.style.display = 'block');
+            }
+        }
+    </script>
+      <br><br>
+  <br><br>
+  <div class="d11">
+  <footer>
+    <div class="d12">
+   <div class="a1">
+    <h1>KidKinder</h1>
+    <p style="font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, consequuntur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,.consequuntur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,</p>
+   </div>
+   <div class="a1">
+    <h1>Get In touch</h1>
+    <p>Address: </p>
+      <p>123 Street, New York, USA</p>
+    <p>Email:</p> 
+    <p>infoexample.com</p>
+    <p>Phone: </p>
+      <p>+123 456 7890</p>
+  </div>
+   <div class="a1">
+    <h1>Quick Links</h1>
+  <p><a style="font-size: 25px;" href="index4.html">Home</a></p>
+  <p><a style="font-size: 25px;"href="aboutus.html">about us</a></p>
+  <p><a style="font-size: 25px;"href="class.html">our classes</a></p>
+  <p><a style="font-size: 25px;"href="teachers.html">Our Teachers</a></p>
+
+  <p><a style="font-size: 25px;"href="blogdetail.html">Our Blog</a></p>
+  <p><a style="font-size: 25px;"href="contactus.html">contact Us</a></p>
+  </div>
+   <div class="a1">
+    <form>
+      <h1>Newsletter</h1>
+      <br><br>  
+    <input style="width:200px;padding:10px;margin-left:15px;"type="text" placeholder="your name" required><br><br>
+      <input style="width:200px;padding:10px;margin-left:15px;"type="text" placeholder="your email" required>
+      <br><br>
+      <button style="width:200px;border:none;border-radius: 45px;padding:10px;margin-left:15px;background-color: rgb(20, 136, 198);">Submit Now</button>
+    </form>
+      
+      </div>
+   </div>
+   <!-- </div> -->
+   <hr style="color:rgb(9, 168, 189);">
+   <br><br>
+   <div class="d13">
+    <h4 style="text-align: center;">&copy;All Rights Reserved.Designed By Akanksha.</h4>
+    <h4 style="text-align: center;">Distributed By: Theme Wagon</h4>
+   </div>
+  </footer>
+  </div>
+  </body>
+</html>
